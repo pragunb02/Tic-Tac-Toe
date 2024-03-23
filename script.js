@@ -38,6 +38,11 @@ const showWinner = (winner) => {
   msgContainer.classList.remove("hide");
   disabledBtn();
 };
+const Draw = () => {
+  msg.innerText = `OOPS DRAW!!`;
+  msgContainer.classList.remove("hide");
+  disabledBtn();
+};
 const checkWinner = () => {
   for (pattern of winningPattern) {
     let pos0 = boxes[pattern[0]].innerText;
@@ -57,6 +62,16 @@ const checkWinner = () => {
   }
 };
 
+const DrawCondition = () => {
+  let ok = true;
+  for (box of boxes) {
+    ok &= box.innerText != "";
+  }
+  if (ok) {
+    Draw();
+  }
+};
+
 // const funt = () => {
 //   console.log("Clicked");
 // };
@@ -66,7 +81,7 @@ const checkWinner = () => {
 
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
-    console.log("Clicked");
+    // console.log("Clicked");
     // box.innerText = "ABCD";
     if (turn0 === true) {
       box.innerText = "O";
@@ -76,6 +91,7 @@ boxes.forEach((box) => {
     turn0 = !turn0;
     box.disabled = true;
     checkWinner();
+    DrawCondition();
   });
 });
 
