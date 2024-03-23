@@ -85,8 +85,12 @@ boxes.forEach((box) => {
     // box.innerText = "ABCD";
     if (turn0 === true) {
       box.innerText = "O";
+      box.classList.add("box0");
+      box.classList.remove("box1");
     } else {
       box.innerText = "X";
+      box.classList.remove("box0");
+      box.classList.add("box1");
     }
     turn0 = !turn0;
     box.disabled = true;
