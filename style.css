@@ -33,6 +33,7 @@ body {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   font-size: 8vmin;
   color: #2d5d7b;
+  background-color: #9191e9;
 }
 
 #reset-btn {
@@ -42,4 +43,31 @@ body {
   color: whitesmoke;
   border-radius: 1rem;
   border: none;
+}
+
+#new-game {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #686868;
+  color: whitesmoke;
+  border-radius: 1rem;
+  border: none;
+}
+
+#msg {
+  color: whitesmoke;
+  font-size: 5vmin;
+}
+
+.msg-container {
+  height: 100vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.hide {
+  display: none;
 }
